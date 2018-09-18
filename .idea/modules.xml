@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/doit-common/doit-common.iml" filepath="$PROJECT_DIR$/doit-common/doit-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager-dao/doit-manager-dao.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager-dao/doit-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager-interface/doit-manager-interface.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager-interface/doit-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager-pojo/doit-manager-pojo.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager-pojo/doit-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager-service/doit-manager-service.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager-service/doit-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-manager/doit-manager-web/doit-manager-web.iml" filepath="$PROJECT_DIR$/doit-manager/doit-manager-web/doit-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-parent/doit-parent.iml" filepath="$PROJECT_DIR$/doit-parent/doit-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-portal/doit-portal.iml" filepath="$PROJECT_DIR$/doit-portal/doit-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit-portal-web/doit-portal-web.iml" filepath="$PROJECT_DIR$/doit-portal-web/doit-portal-web.iml" />
+    </modules>
+  </component>
+</project>

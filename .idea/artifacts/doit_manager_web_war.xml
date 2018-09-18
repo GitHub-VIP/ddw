@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="doit-manager-web:war">
+    <output-path>$PROJECT_DIR$/doit-manager/doit-manager-web/target</output-path>
+    <root id="archive" name="doit-manager-web.war">
+      <element id="artifact" artifact-name="doit-manager-web:war exploded" />
+    </root>
+  </artifact>
+</component>

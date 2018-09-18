@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="doit-common" />
+        <module name="doit-manager-dao" />
+        <module name="doit-manager-interface" />
+        <module name="doit-manager-pojo" />
+        <module name="doit-manager-service" />
+        <module name="doit-manager-web" />
+        <module name="doit-portal-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="doit-common" target="1.8" />
+      <module name="doit-manager" target="1.8" />
+      <module name="doit-manager-dao" target="1.8" />
+      <module name="doit-manager-interface" target="1.8" />
+      <module name="doit-manager-pojo" target="1.8" />
+      <module name="doit-manager-service" target="1.8" />
+      <module name="doit-manager-web" target="1.8" />
+      <module name="doit-parent" target="1.8" />
+      <module name="doit-portal" target="1.8" />
+      <module name="doit-portal-web" target="1.8" />
+      <module name="doit-search-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

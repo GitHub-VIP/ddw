@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dd.shop.manager.dao.ProductCustomMapper">
+
+    <sql id="Base_Column_List">
+      p.id, p.category_id, p.title, p.subtitle,
+      p.picture, p.images, p.detail, p.price, p.inventory, p.status, p.createdate, p.modifytime, c.name as catName
+    </sql>
+
+    <sql id="Where_Clause">
+        <where>
+            p.status != 3
+            <if test="query != null and query.title !=null and query.title !=''">
+                and p.title like '%${query.title}%'
+            </if>
+        </where>
+    </sql>
+
+
+    <select id="countProducts" resultType="_long">
+        select count(1)
+        from product p
+        <include refid="Where_Clause"/>
+    </select>
+
+    <select id="listProductsByPage" resultType="com.dd.shop.manager.pojo.vo.ProductCustom">
+        select
+        <include refid="Base_Column_List"/>
+        from product p
+        left join category c
+        on p.category_id = c.id
+        <include refid="Where_Clause"/>
+        /* order by p.id desc*/
+        limit #{page.offset},#{page.limit}
+    </select>
+
+    <!--增-->
+    <insert id="insert" parameterType="com.dd.shop.manager.pojo.po.Product">
+        insert into product (category_id, title,
+          subtitle, picture, images,
+          detail, price, inventory,
+          status, createdate, modifytime
+          )
+        values (#{categoryId}, #{title},
+          #{subtitle}, #{picture}, #{images},
+          #{detail}, #{price}, #{inventory},
+          #{status}, #{createdate}, #{modifytime}
+          )
+    </insert>
+
+    <!--修改状态-->
+    <update id="updateByStatus" parameterType="com.dd.shop.manager.pojo.po.Product">
+        update product set
+        status=#{status}
+        where id=#{id}
+    </update>
+
+    <!--修改商品-->
+   <!-- <update id="updateProduct" parameterType="com.dd.shop.manager.pojo.po.Product">
+        update product set category_id=#{categoryId},title=#{title},subtitle=#{subtitle},
+        picture=#{picture},images=#{images},detail=#{detail},price=#{price},inventory=#{inventory},
+        status=#{status},createdate=#{createdate},modifytime=#{modifytime}
+        where id=#{id}
+    </update>-->
+
+    <update id="updateProduct" parameterType="com.dd.shop.manager.pojo.po.Product">
+        update product
+        <set >
+            <if test="categoryId != null" >
+                category_id=#{categoryId},
+            </if>
+            <if test="title != null" >
+                title=#{title},
+            </if>
+            <if test="subtitle != null" >
+                subtitle=#{subtitle},
+            </if>
+            <if test="picture != null" >
+                picture=#{picture},
+            </if>
+            <if test="images != null" >
+                images=#{images},
+            </if>
+            <if test="detail != null" >
+                detail=#{detail},
+            </if>
+            <if test="price != null" >
+                price=#{price},
+            </if>
+            <if test="inventory != null" >
+                inventory=#{inventory},
+            </if>
+            <if test="status != null" >
+                status=#{status},
+            </if>
+            <if test="createdate != null" >
+                createdate=#{createdate},
+            </if>
+            <if test="modifytime != null" >
+                modifytime=#{modifytime}
+            </if>
+        </set>
+        where
+        id=#{id}
+    </update>
+
+
+
+
+
+
+    <select id="selectById" parameterType="com.dd.shop.manager.pojo.po.Product" resultType="com.dd.shop.manager.pojo.vo.ProductCustom">
+        select
+        id,category_id, title,
+        subtitle, picture, images,
+        detail, price, inventory,
+        status, createdate, modifytime
+        from product
+        where id=#{id}
+    </select>
+
+</mapper>
